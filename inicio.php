@@ -1,9 +1,11 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "gab123";
-$dbname = "simplebank_db";
+$config = parse_ini_file('.env');
+
+$servername = $config['DB_HOST'];
+$username = $config['DB_USER'];
+$password = $config['DB_PASS'];
+$dbname = $config['DB_NAME'];
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
